@@ -21,6 +21,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Vector3 mousePos = GetMousePos();
         movePosition = Vector2.Lerp(transform.position, mousePos, moveSpeed);
+        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        transform.up = direction;
     }
 
     private void FixedUpdate()
