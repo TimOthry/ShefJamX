@@ -188,7 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2064539708}
-  moveSpeed: 0.1
+  moveSpeed: 0.05
+  health: 0
 --- !u!212 &1465308548
 SpriteRenderer:
   m_ObjectHideFlags: 0
