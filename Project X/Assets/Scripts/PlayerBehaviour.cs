@@ -7,7 +7,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Rigidbody2D rigidBody;
     [SerializeField] private float moveSpeed = 0.1f;
     [SerializeField] private int health = 100;
-    [SerializeField] private float fuel;
+    public float fuel;
+    public float maxFuel;
     [SerializeField] private float scaleMultFuel;
     [SerializeField] private float fuelDecay;
 
@@ -18,6 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxFuel = 500; // This is to be changed when fuel is upgraded
         rigidBody = GetComponent<Rigidbody2D>();
         lastPos = transform.position;
     }
