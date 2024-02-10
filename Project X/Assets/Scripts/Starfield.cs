@@ -13,7 +13,7 @@ public class Starfield : MonoBehaviour
     [SerializeField] private float fieldHeight = 25f;
     [SerializeField] private bool colourise = false;
 
-    [SerializeField] private float speed;
+    [SerializeField] private float ParallaxFactor = 0f;
     [SerializeField] private Transform bgCamera;
 
 
@@ -87,5 +87,10 @@ public class Starfield : MonoBehaviour
 			stars[ i ].position = pos - transform.position;
 		}
 		particles.SetParticles( stars, stars.Length );
+
+        Vector3 newPos = bgCamera.position * ParallaxFactor;					// Calculate the position of the object
+		newPos.z = 0;						// Force Z-axis to zero, since we're in 2D
+		transform.position = newPos;
+
     }
 }

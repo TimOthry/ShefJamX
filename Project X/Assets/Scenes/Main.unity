@@ -217,6 +217,14 @@ PrefabInstance:
       propertyPath: bgCamera
       value: 
       objectReference: {fileID: 2064539709}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: starSize
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: ParallaxFactor
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -516,6 +524,10 @@ PrefabInstance:
       propertyPath: starSize
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: ParallaxFactor
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -586,6 +598,10 @@ PrefabInstance:
       propertyPath: bgCamera
       value: 
       objectReference: {fileID: 2064539709}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: ParallaxFactor
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
