@@ -222,6 +222,14 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: fieldWidth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: fieldHeight
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: ParallaxFactor
       value: 0.5
       objectReference: {fileID: 0}
@@ -422,8 +430,14 @@ MonoBehaviour:
   mainCamera: {fileID: 2064539708}
   moveSpeed: 0.05
   health: 0
+<<<<<<< Updated upstream
   fuel: 0
   scaleMultFuel: 0
+=======
+  fuel: 500
+  scaleMultFuel: 0.05
+  fuelDecay: 0.5
+>>>>>>> Stashed changes
 --- !u!212 &1465308548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -830,6 +844,14 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: fieldWidth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: fieldHeight
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: ParallaxFactor
       value: 0.7
       objectReference: {fileID: 0}
@@ -1003,6 +1025,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2064539709}
     - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: fieldWidth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
+      propertyPath: fieldHeight
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131095296067995651, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: ParallaxFactor
       value: 0.95
       objectReference: {fileID: 0}
@@ -1078,7 +1108,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
