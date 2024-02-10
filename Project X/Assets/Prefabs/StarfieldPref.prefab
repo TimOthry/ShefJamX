@@ -4846,8 +4846,8 @@ MonoBehaviour:
   maxStars: 100
   starSize: 0.1
   starSizeRange: 0.5
-  fieldWidth: 20
-  fieldHeight: 25
+  fieldWidth: 40
+  fieldHeight: 50
   colourise: 0
   ParallaxFactor: 0
   bgCamera: {fileID: 0}
