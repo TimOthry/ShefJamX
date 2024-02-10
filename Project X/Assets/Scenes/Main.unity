@@ -460,7 +460,6 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
-<<<<<<< HEAD
 --- !u!1 &1470410012
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,10 +5350,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594962023
 GameObject:
-=======
 --- !u!1001 &1628157864
 PrefabInstance:
->>>>>>> 5ebe2bce49854f72b6ce89b60648fc2665663e7b
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -5683,9 +5680,6 @@ SceneRoots:
   - {fileID: 2064539709}
   - {fileID: 1465308549}
   - {fileID: 7285374242497719082}
-<<<<<<< HEAD
   - {fileID: 1594962025}
   - {fileID: 1470410015}
-=======
   - {fileID: 93366653}
->>>>>>> 5ebe2bce49854f72b6ce89b60648fc2665663e7b
