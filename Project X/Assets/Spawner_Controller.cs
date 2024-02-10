@@ -8,22 +8,18 @@ public class Spawner_Controller : MonoBehaviour
 {
 
     public GameObject asteriod;
-    public GameObject home;
+    //public GameObject home;
     private Transform playerPos;
     [SerializeField] private float spawnRate;
     [SerializeField] private float distance;
     [SerializeField] private bool isSpawning = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
         spawnRate = 5;
-        Transform homePos = home.transform;
+        //Transform homePos = home.transform;
         playerPos = GameObject.Find("Player").transform;
 
         if (!isSpawning)
