@@ -10,6 +10,7 @@ public class AsteroidBehaviour : MonoBehaviour
     private GameObject player;
 
     [SerializeField] private float Angle;
+    [SerializeField] private int maxDistance;
     public Vector3 vectorVelocity;
 
     private void Awake()
@@ -17,8 +18,8 @@ public class AsteroidBehaviour : MonoBehaviour
         player = GameObject.Find("Player");
         float y = gameObject.transform.position.y - player.transform.position.y;
         float x = gameObject.transform.position.x - player.transform.position.x;
-        Angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-        //Angle += Random.Range(-30, 30);
+        Angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg + 90;
+        Angle += Random.Range(-30, 30);
     }
 
     private void Update()
@@ -26,6 +27,15 @@ public class AsteroidBehaviour : MonoBehaviour
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
         vectorVelocity = movement * Time.deltaTime * 5;
         transform.position += vectorVelocity;
+
+
+        Vector2 distanceVector = gameObject.transform.position - player.transform.position;
+        float distance = Mathf.Pow(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2), 0.5f);
+
+        if (distance > maxDistance)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(int damage)

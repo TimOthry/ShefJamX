@@ -146,22 +146,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   destructionEffect: {fileID: 1657189057164158185, guid: ff885f67ee6044cebbf8cfa38daa3cf1, type: 3}
-  Angle: 0
-  vectorVelocity: {x: 0, y: 0, z: 0}
---- !u!114 &-5425529972864494370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124640145550341616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19737c51bd06b4daaa03a6316449c5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  droppedItemPrefab: {fileID: 0}
-  lootlist:
-  - {fileID: 11400000, guid: 60e1ddda9718643b5ab49cb0867cb895, type: 2}
-  - {fileID: 11400000, guid: a4947845128f64b8a8d8276ea29a7382, type: 2}
-  - {fileID: 11400000, guid: 0a9c23356881b47a885274c900549557, type: 2}
