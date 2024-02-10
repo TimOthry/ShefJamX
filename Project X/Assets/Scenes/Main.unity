@@ -271,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1021880163}
   bulletPrefab: {fileID: 411806389449981207, guid: dc5c84a2b71b74cdf80311add2ebc97d, type: 3}
+  fireRate: 0.2
 --- !u!50 &1465308551
 Rigidbody2D:
   serializedVersion: 4
