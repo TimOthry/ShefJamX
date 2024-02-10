@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class AsteroidBehaviour : MonoBehaviour
 {
     public int health = 100;
@@ -11,6 +13,7 @@ public class AsteroidBehaviour : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private int maxDistance;
     public Vector3 vectorVelocity;
+    public AudioClip explosionSound;
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class AsteroidBehaviour : MonoBehaviour
 
     void Die()
     {
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position, 2f);
         GetComponent<LootBag>().InstantiateLoot(transform.position);
         Instantiate(destructionEffect,transform.position, Quaternion.identity);
         Destroy(gameObject);
