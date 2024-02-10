@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5534643992366978431}
   - component: {fileID: 7393636524995432765}
   - component: {fileID: 4198495670610461899}
+  - component: {fileID: -5425529972864494370}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -145,6 +146,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   destructionEffect: {fileID: 1657189057164158185, guid: ff885f67ee6044cebbf8cfa38daa3cf1, type: 3}
-  Angle: 0
-  maxDistance: 100
-  vectorVelocity: {x: 0, y: 0, z: 0}
