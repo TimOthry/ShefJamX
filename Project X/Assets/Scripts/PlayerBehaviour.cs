@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private float fuel;
     [SerializeField] private float scaleMultFuel;
+    [SerializeField] private float fuelDecay;
 
     private float distanceTravelled;
     private Vector2 lastPos;
@@ -18,6 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        lastPos = transform.position;
     }
 
     // Update is called once per frame
@@ -37,7 +39,12 @@ public class PlayerBehaviour : MonoBehaviour
         distanceTravelled = Vector2.Distance(transform.position, lastPos);
         lastPos = transform.position;
 
-        fuel -= distanceTravelled * scaleMultFuel;
+        fuel -= fuelDecay + (distanceTravelled * scaleMultFuel);
+
+        if (fuel <= 0)
+        {
+            // Added Player death here as well
+        }
 
     }
 
