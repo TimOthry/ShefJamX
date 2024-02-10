@@ -423,7 +423,7 @@ MonoBehaviour:
   moveSpeed: 0.05
   health: 0
   fuel: 0
-  scaleMult: 0
+  scaleMultFuel: 0
 --- !u!212 &1465308548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -661,12 +661,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575778051}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 36aaaafd9398c6551b22da87717d1e1e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.231
   m_Pitch: 1
   Loop: 1
   Mute: 0
