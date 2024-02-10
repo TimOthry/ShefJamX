@@ -52,7 +52,8 @@ public class AsteroidBehaviour : MonoBehaviour
 
     void Die()
     {
-        Instantiate(destructionEffect, transform.position, Quaternion.identity);
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Instantiate(destructionEffect,transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
