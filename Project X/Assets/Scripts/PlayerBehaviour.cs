@@ -3,10 +3,19 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
+
     private Vector2 movePosition = Vector2.zero;
     private Rigidbody2D rigidBody;
+
     [SerializeField] private float moveSpeed = 0.1f;
     [SerializeField] private int health;
+    [SerializeField] private float fuel;
+    [SerializeField] private float scaleMult;
+
+    private float distanceTravelled;
+    private Vector2 lastPos;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +29,19 @@ public class PlayerBehaviour : MonoBehaviour
         Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         transform.up = direction;
         movePosition = Vector2.Lerp(transform.position, mousePos, moveSpeed);
+
     }
 
     private void FixedUpdate()
     {
         if (!Input.GetMouseButton(1)) return;
         rigidBody.MovePosition(movePosition);
+
+        distanceTravelled = Vector2.Distance(transform.position, lastPos);
+        lastPos = transform.position;
+
+        fuel -= distanceTravelled * scaleMult;
+
     }
 
     private Vector3 GetMousePos()
