@@ -631,6 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteriod: {fileID: 124640145550341616, guid: f2df4f8c2ffac144cb59cb90ea99b830, type: 3}
+  home: {fileID: 231695278}
   spawnRate: 5
   distance: 0
   isSpawning: 0

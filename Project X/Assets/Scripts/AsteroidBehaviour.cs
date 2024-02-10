@@ -25,7 +25,7 @@ public class AsteroidBehaviour : MonoBehaviour
     private void Update()
     {
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
-        vectorVelocity = movement * Time.deltaTime * 5;
+        vectorVelocity = movement * Time.deltaTime * 10;
         transform.position += vectorVelocity;
 
 

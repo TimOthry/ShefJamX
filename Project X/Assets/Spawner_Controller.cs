@@ -8,7 +8,7 @@ public class Spawner_Controller : MonoBehaviour
 {
 
     public GameObject asteriod;
-    //public GameObject home;
+    public GameObject home;
     private Transform playerPos;
     [SerializeField] private float spawnRate;
     [SerializeField] private float distance;
@@ -18,8 +18,8 @@ public class Spawner_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnRate = 5;
-        //Transform homePos = home.transform;
+        spawnRate = 3;
+        Transform homePos = home.transform;
         playerPos = GameObject.Find("Player").transform;
 
         if (!isSpawning)
@@ -27,18 +27,18 @@ public class Spawner_Controller : MonoBehaviour
             StartCoroutine(Asteriod_Spawn_Timer(playerPos));
         }
         
-        //Vector2 distanceVector = playerPos.position - homePos.position;
-        //distance = Mathf.Pow(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2), 0.5f);
+        Vector2 distanceVector = playerPos.position - homePos.position;
+        distance = Mathf.Pow(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2), 0.5f);
 
-        //if (spawnRate > 0.3f)
-        //{
-        //    spawnRate -= Mathf.Floor(distance / 500) * 0.5f;
-        //}
-        //else
-        //{
-        //    spawnRate = 0.3f;
-        //}
-        
+        if (spawnRate > 0.1f)
+        {
+            spawnRate -= Mathf.Floor(distance / 30) * 0.2f;
+        }
+        else
+        {
+            spawnRate = 0.1f;
+        }
+
 
 
     }
