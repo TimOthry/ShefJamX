@@ -35,11 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
             Vector2 velocityDifference = rigidBody.velocity - (Vector2)asteroid.vectorVelocity;
             float speedDifference = velocityDifference.magnitude;
             Debug.Log(speedDifference.ToString("F2"));
-            
         }
-
-        Destroy(gameObject);
-        Debug.Log(hitInfo.name);
     }
 
     private Vector3 GetMousePos()
