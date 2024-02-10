@@ -5,7 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
+    public int damage = 40;
     public Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,12 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        AsteroidBehaviour asteroid = hitInfo.GetComponent<AsteroidBehaviour>();
+        if (asteroid != null)
+        {
+            asteroid.TakeDamage(damage);
+        } 
+
         Destroy(gameObject);
         Debug.Log(hitInfo.name);
     }
