@@ -38,7 +38,7 @@ public class Starfield : MonoBehaviour
         for (int i = 0; i < maxStars; i++)
         {
             float randSize = Random.Range(starSize, starSizeRange + 1f);
-            float scaledColour = (true == colourise) ? randSize - starSizeRange : 1f;
+            float scaledColour = colourise ? randSize - starSizeRange : 1f;
 
             stars[i].position = GetRandomInRectangle(fieldWidth, fieldHeight) + transform.position;
             stars[i].startSize = starSize * randSize;
@@ -53,11 +53,6 @@ public class Starfield : MonoBehaviour
         float y = Random.Range(0, height);
         return new Vector3(x - xOffset, y - yOffset);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -66,20 +61,20 @@ public class Starfield : MonoBehaviour
 		{
 			Vector3 pos = stars[ i ].position + transform.position;
  
-			if ( pos.x < ( bgCamera.position.x - xOffset ) )
+			if ( pos.x < bgCamera.position.x - xOffset )
 			{
 				pos.x += fieldWidth;
 			}
-			else if ( pos.x > ( bgCamera.position.x + xOffset ) )
+			else if ( pos.x > bgCamera.position.x + xOffset )
 			{
 				pos.x -= fieldWidth;
 			}
  
-			if ( pos.y < ( bgCamera.position.y - yOffset ) )
+			if ( pos.y < bgCamera.position.y - yOffset )
 			{
 				pos.y += fieldHeight;
 			}
-			else if ( pos.y > ( bgCamera.position.y + yOffset ) )
+			else if ( pos.y > bgCamera.position.y + yOffset )
 			{
 				pos.y -= fieldHeight;
 			}

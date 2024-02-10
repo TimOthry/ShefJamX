@@ -45,7 +45,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (hitInfo.GetComponent<AsteroidBehaviour>() is { } asteroid)
         {
-            Vector2 velocityDifference = rigidBody.velocity - (Vector2)asteroid.vectorVelocity;
+            Vector2 velocityDifference = movePosition - (Vector2)asteroid.vectorVelocity / Time.deltaTime;
             float speedDifference = velocityDifference.magnitude;
             Debug.Log(speedDifference.ToString("F2"));
         }
