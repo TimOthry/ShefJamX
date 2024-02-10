@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class AsteroidBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int health = 100;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject destructionEffect;
+
+    public void TakeDamage(int damage)
     {
-        
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    
+    void Die()
+    {
+        Instantiate(destructionEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
