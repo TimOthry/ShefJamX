@@ -56,26 +56,36 @@ public class Starfield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Awake();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        CalculateMovement();
-    }
-
-    void CalculateMovement()
-    {
-        transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
-        for (int i=0; i<maxStars; i++)
-        {
-            Vector3 pos = stars[i].position + transform.position;
-            if (pos.x < (bgCamera.position.x - xOffset))
-            {
-                pos.x += fieldWidth;
-            }
-        }
-        particles.SetParticles(stars, stars.Length);
+        for ( int i=0; i<maxStars; i++ )
+		{
+			Vector3 pos = stars[ i ].position + transform.position;
+ 
+			if ( pos.x < ( bgCamera.position.x - xOffset ) )
+			{
+				pos.x += fieldWidth;
+			}
+			else if ( pos.x > ( bgCamera.position.x + xOffset ) )
+			{
+				pos.x -= fieldWidth;
+			}
+ 
+			if ( pos.y < ( bgCamera.position.y - yOffset ) )
+			{
+				pos.y += fieldHeight;
+			}
+			else if ( pos.y > ( bgCamera.position.y + yOffset ) )
+			{
+				pos.y -= fieldHeight;
+			}
+ 
+			stars[ i ].position = pos - transform.position;
+		}
+		particles.SetParticles( stars, stars.Length );
     }
 }
