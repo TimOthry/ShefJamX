@@ -147,8 +147,8 @@ MonoBehaviour:
   health: 100
   destructionEffect: {fileID: 1657189057164158185, guid: ff885f67ee6044cebbf8cfa38daa3cf1, type: 3}
   Angle: 0
+  speed: 7
   maxDistance: 100
-  speed: 0
   vectorVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &204640238455417891
 MonoBehaviour:
