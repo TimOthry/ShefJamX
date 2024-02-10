@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AsteroidBehaviour : MonoBehaviour
@@ -10,8 +8,8 @@ public class AsteroidBehaviour : MonoBehaviour
     private GameObject player;
 
     [SerializeField] private float Angle;
+    [SerializeField] private float speed = 5f;
     [SerializeField] private int maxDistance;
-    [SerializeField] private int speed;
     public Vector3 vectorVelocity;
 
     private void Awake()
@@ -26,7 +24,7 @@ public class AsteroidBehaviour : MonoBehaviour
     private void Update()
     {
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
-        vectorVelocity = movement * Time.deltaTime * speed;
+        vectorVelocity = movement * (Time.deltaTime * speed);
         transform.position += vectorVelocity;
 
 

@@ -6,11 +6,11 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector2 movePosition = Vector2.zero;
     private Rigidbody2D rigidBody;
     [SerializeField] private float moveSpeed = 0.1f;
-    [SerializeField] private int health;
+    [SerializeField] private int health = 100;
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = this.GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,6 +26,20 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!Input.GetMouseButton(1)) return;
         rigidBody.MovePosition(movePosition);
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.GetComponent<AsteroidBehaviour>() is { } asteroid)
+        {
+            Vector2 velocityDifference = rigidBody.velocity - (Vector2)asteroid.vectorVelocity;
+            float speedDifference = velocityDifference.magnitude;
+            Debug.Log(speedDifference.ToString("F2"));
+            
+        }
+
+        Destroy(gameObject);
+        Debug.Log(hitInfo.name);
     }
 
     private Vector3 GetMousePos()
