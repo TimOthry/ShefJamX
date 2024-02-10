@@ -7,6 +7,13 @@ public class PlayerBehaviour : MonoBehaviour
     private Rigidbody2D rigidBody;
     [SerializeField] private float moveSpeed = 0.1f;
     [SerializeField] private int health = 100;
+    [SerializeField] private float fuel;
+    [SerializeField] private float scaleMult;
+
+    private float distanceTravelled;
+    private Vector2 lastPos;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +33,12 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!Input.GetMouseButton(1)) return;
         rigidBody.MovePosition(movePosition);
+
+        distanceTravelled = Vector2.Distance(transform.position, lastPos);
+        lastPos = transform.position;
+
+        fuel -= distanceTravelled * scaleMult;
+
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
