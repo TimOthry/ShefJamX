@@ -21,5 +21,6 @@ public class AsteroidBehaviour : MonoBehaviour
     void Die()
     {
         Instantiate(destructionEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
