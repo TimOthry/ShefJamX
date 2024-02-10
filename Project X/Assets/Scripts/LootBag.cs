@@ -18,9 +18,10 @@ public class LootBag : MonoBehaviour
             if (randomNumber <= item.dropChance)
             {
                 possibleItems.Add(item);
+                Debug.Log(item);
             }
         }
-        if(possibleItems.Count > 0)
+        if (possibleItems.Count > 0)
         {
             Loot droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
             return droppedItem;
