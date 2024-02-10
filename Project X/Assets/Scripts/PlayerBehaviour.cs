@@ -3,14 +3,12 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-
     private Vector2 movePosition = Vector2.zero;
     private Rigidbody2D rigidBody;
-
     [SerializeField] private float moveSpeed = 0.1f;
-    [SerializeField] private int health;
+    [SerializeField] private int health = 100;
     [SerializeField] private float fuel;
-    [SerializeField] private float scaleMult;
+    [SerializeField] private float scaleMultFuel;
 
     private float distanceTravelled;
     private Vector2 lastPos;
@@ -19,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = this.GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -29,7 +27,6 @@ public class PlayerBehaviour : MonoBehaviour
         Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         transform.up = direction;
         movePosition = Vector2.Lerp(transform.position, mousePos, moveSpeed);
-
     }
 
     private void FixedUpdate()
@@ -40,8 +37,18 @@ public class PlayerBehaviour : MonoBehaviour
         distanceTravelled = Vector2.Distance(transform.position, lastPos);
         lastPos = transform.position;
 
-        fuel -= distanceTravelled * scaleMult;
+        fuel -= distanceTravelled * scaleMultFuel;
 
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.GetComponent<AsteroidBehaviour>() is { } asteroid)
+        {
+            Vector2 velocityDifference = movePosition - (Vector2)asteroid.vectorVelocity / Time.deltaTime;
+            float speedDifference = velocityDifference.magnitude;
+            Debug.Log(speedDifference.ToString("F2"));
+        }
     }
 
     private Vector3 GetMousePos()
