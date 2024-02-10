@@ -8,7 +8,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float moveSpeed = 0.1f;
     [SerializeField] private int health = 100;
     [SerializeField] private float fuel;
-    [SerializeField] private float scaleMult;
+    [SerializeField] private float scaleMultFuel;
 
     private float distanceTravelled;
     private Vector2 lastPos;
@@ -37,7 +37,7 @@ public class PlayerBehaviour : MonoBehaviour
         distanceTravelled = Vector2.Distance(transform.position, lastPos);
         lastPos = transform.position;
 
-        fuel -= distanceTravelled * scaleMult;
+        fuel -= distanceTravelled * scaleMultFuel;
 
     }
 
