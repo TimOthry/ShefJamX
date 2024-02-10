@@ -599,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298481456931352048, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4298481456931352048, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: m_LocalRotation.w
@@ -756,7 +756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2b6befffd13057f8a3cd94659536f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 2064539706}
   HomePlanet: {fileID: 231695278}
   CompasRange: 20
 --- !u!1001 &1885093235
@@ -777,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298481456931352048, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4298481456931352048, guid: 559ed38d9e3731211be9a01b2a2cce17, type: 3}
       propertyPath: m_LocalRotation.w

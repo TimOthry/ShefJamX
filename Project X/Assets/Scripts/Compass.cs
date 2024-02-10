@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 
 public class Compass : MonoBehaviour
 {
-    public GameObject Player;
     public GameObject HomePlanet;
     [SerializeField] private float CompasRange = 20f;
     SpriteRenderer spriteRenderer;
@@ -19,9 +18,9 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance (MainCamera.transform.position, HomePlanet.transform.position) > CompasRange)
+        if (Vector3.Distance (transform.parent.position, HomePlanet.transform.position) > CompasRange)
         {
-            transform.rotation = Quaternion.Euler(Vector3.forward * (Mathf.Atan2(MainCamera.transform.position.y, MainCamera.transform.position.x) * Mathf.Rad2Deg + 90));
+            transform.rotation = Quaternion.Euler(Vector3.forward * (Mathf.Atan2(transform.parent.position.y, transform.parent.position.x) * Mathf.Rad2Deg + 90));
             spriteRenderer.enabled = true;
         } else {
             spriteRenderer.enabled = false;
