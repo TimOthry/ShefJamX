@@ -11,6 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float maxFuel;
     [SerializeField] private float scaleMultFuel;
     [SerializeField] private float fuelDecay;
+    [SerializeField] private float boost;
 
     private float distanceTravelled;
     private Vector2 lastPos;
@@ -19,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boost = 1;
         maxFuel = 500; // This is to be changed when fuel is upgraded
         rigidBody = GetComponent<Rigidbody2D>();
         lastPos = transform.position;
@@ -27,10 +29,25 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            boost = 10;
+        }
+        else
+        {
+            boost = 1;
+        }
+
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    boost = 1;
+        //}
+
         Vector3 mousePos = GetMousePos();
         Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         transform.up = direction;
-        movePosition = Vector2.Lerp(transform.position, mousePos, moveSpeed);
+        movePosition = Vector2.Lerp(transform.position, mousePos, moveSpeed * boost);
+
     }
 
     private void FixedUpdate()
@@ -46,6 +63,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (fuel <= 0)
         {
             // Added Player death here as well
+
+            Destroy(gameObject);
         }
 
     }
