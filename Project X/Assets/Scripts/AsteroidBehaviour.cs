@@ -11,6 +11,7 @@ public class AsteroidBehaviour : MonoBehaviour
 
     [SerializeField] private float Angle;
     [SerializeField] private int maxDistance;
+    [SerializeField] private int speed;
     public Vector3 vectorVelocity;
 
     private void Awake()
@@ -25,7 +26,7 @@ public class AsteroidBehaviour : MonoBehaviour
     private void Update()
     {
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
-        vectorVelocity = movement * Time.deltaTime * 10;
+        vectorVelocity = movement * Time.deltaTime * speed;
         transform.position += vectorVelocity;
 
 
