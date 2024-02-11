@@ -81,13 +81,13 @@ public class PlayerBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.GetComponent<Minerals>())
+        if (hitInfo.GetComponent<Minerals>() is { } minerals)
         {
             
         }
         else
         {
-            // Player cant die for now
+            Die();
         }
     }
 
