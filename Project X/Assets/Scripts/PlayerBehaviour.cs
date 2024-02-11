@@ -92,7 +92,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else
         {
-            Die();
+            
         }
     }
 
