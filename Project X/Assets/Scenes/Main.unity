@@ -1089,7 +1089,7 @@ Transform:
   m_GameObject: {fileID: 1021880162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.778, z: -1}
+  m_LocalPosition: {x: 0, y: 0.216, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1184,9 +1184,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0, y: 0.13100538}
+      - {x: -0.17401141, y: -0.09808886}
+      - {x: 0.1489354, y: -0.10059631}
   m_UseDelaunayMesh: 0
 --- !u!1 &1258134396
 GameObject:
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   scaleMultFuel: 0.05
   fuelDecay: 0.5
   boost: 0
-  destructionEffect: {fileID: 1657189057164158185, guid: ff885f67ee6044cebbf8cfa38daa3cf1, type: 3}
+  destructionEffect: {fileID: 1657189057164158185, guid: ae2c35386f8f54ecdbb40e7596a66e74, type: 3}
   explosionSound: {fileID: 8300000, guid: 6fa2e6938e271ff629b6718badedeb21, type: 3}
   credits: 0
   distanceTravelled: 0
@@ -1455,7 +1455,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a2b6aa3ac793494983919fac7c2ad8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1475,8 +1475,8 @@ Transform:
   m_GameObject: {fileID: 1465308545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.9087, y: 14.9087, z: -2}
+  m_LocalScale: {x: 4.7862062, y: 4.7862062, z: 4.7862062}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1473205048}
@@ -1562,8 +1562,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1571,9 +1571,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: -0.0042444756, y: 0.14017747}
+      - {x: -0.14346391, y: -0.097665265}
+      - {x: 0.15195292, y: -0.1061541}
   m_UseDelaunayMesh: 0
 --- !u!82 &1465308554
 AudioSource:
