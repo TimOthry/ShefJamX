@@ -46,6 +46,7 @@ public class SafeArea : MonoBehaviour
             if (!inRange)
             {
                 isFueling = false;
+                source.Stop();
                 yield break;
             }
             yield return new WaitForSeconds(0.00001f);
@@ -54,6 +55,7 @@ public class SafeArea : MonoBehaviour
 
         isFueling = false;
         source.Stop();
+
 
         if (player.fuel > player.maxFuel)
         {
