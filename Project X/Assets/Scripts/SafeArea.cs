@@ -49,7 +49,7 @@ public class SafeArea : MonoBehaviour
                 yield break;
             }
             yield return new WaitForSeconds(0.00001f);
-            player.fuel += 1;
+            player.fuel += player.maxFuel * 0.1f;
         }
 
         isFueling = false;

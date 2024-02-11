@@ -15,7 +15,7 @@ public class Spawner_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnRate = 3;
+        spawnRate = 7;
         Transform homePos = home.transform;
         playerPos = GameObject.Find("Player").transform;
 
@@ -29,7 +29,7 @@ public class Spawner_Controller : MonoBehaviour
 
         if (spawnRate > 0.1f)
         {
-            spawnRate -= Mathf.Floor(distance / 100) * 0.2f;
+            spawnRate -= Mathf.Floor(distance / 100) * 0.5f;
         }
         else
         {

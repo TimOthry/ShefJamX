@@ -31,11 +31,15 @@ public class AsteroidBehaviour : MonoBehaviour
 
     private void Update()
     {
+        Vector2 distanceVector = transform.position - player.transform.position;
+        float distance = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2));
+
+        speed += Mathf.Floor(distance / 100) * 0.5f; ;
+
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
         transform.position += (Vector3)(movement * (Time.deltaTime * speed));
         
-        Vector2 distanceVector = transform.position - player.transform.position;
-        float distance = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2));
+
         
         if (distance > maxDistance)
         {
