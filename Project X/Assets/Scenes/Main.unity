@@ -957,13 +957,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2064539708}
-  moveSpeed: 0.05
-  health: 0
+  maxMoveSpeed: 0.5
+  accelerationTime: 0.5
   fuel: 500
-  maxFuel: 0
+  maxFuel: 500
   scaleMultFuel: 0.05
   fuelDecay: 0.5
   boost: 0
+  destructionEffect: {fileID: 1657189057164158185, guid: ff885f67ee6044cebbf8cfa38daa3cf1, type: 3}
+  explosionSound: {fileID: 8300000, guid: 6fa2e6938e271ff629b6718badedeb21, type: 3}
+  distanceTravelled: 0
   safeArea: {fileID: 896364482}
 --- !u!212 &1465308548
 SpriteRenderer:
@@ -1026,7 +1029,7 @@ Transform:
   m_GameObject: {fileID: 1465308545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13, z: -1}
+  m_LocalPosition: {x: 0, y: 14, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1214,7 +1217,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575778051}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 36aaaafd9398c6551b22da87717d1e1e, type: 3}
@@ -1431,7 +1434,7 @@ Transform:
   m_GameObject: {fileID: 1703116334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 0.24, y: 0.43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

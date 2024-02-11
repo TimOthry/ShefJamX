@@ -6,14 +6,14 @@ public class AsteroidBehaviour : MonoBehaviour
 {
     public int health = 100;
 
-    public GameObject destructionEffect;
+    [SerializeField] private GameObject destructionEffect;
     private GameObject player;
 
     [SerializeField] private float Angle;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int maxDistance;
-    public Vector3 vectorVelocity;
-    public AudioClip explosionSound;
+    private Vector3 vectorVelocity;
+    [SerializeField] private AudioClip explosionSound;
 
     private void Awake()
     {
@@ -27,8 +27,7 @@ public class AsteroidBehaviour : MonoBehaviour
     private void Update()
     {
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
-        vectorVelocity = movement * (Time.deltaTime * speed);
-        transform.position += vectorVelocity;
+        transform.position += (Vector3)(movement * (Time.deltaTime * speed));
 
 
         Vector2 distanceVector = gameObject.transform.position - player.transform.position;
