@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
     public int damage;
+    public GameObject impactEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class Bullet : MonoBehaviour
             {
                 asteroid.TakeDamage(damage);
             }
+
+            Instantiate(impactEffect, transform.position, transform.rotation);
 
             Destroy(gameObject);
         }
