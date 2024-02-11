@@ -10,11 +10,12 @@ public class SafeArea : MonoBehaviour
     [SerializeField] private float checkRange;
     public bool inRange;
     private bool isFueling = false;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,12 +28,17 @@ public class SafeArea : MonoBehaviour
             StartCoroutine(Fueling());
         }
 
+        if (isFueling)
+        {
+            source.pitch = player.fuel / player.maxFuel;
+        }
 
     }
 
     IEnumerator Fueling()
     {
         isFueling = true;
+        source.Play();
         float leftToFuel = player.maxFuel - player.fuel;
 
         for (int i = 0; i < leftToFuel; i++)
@@ -47,6 +53,7 @@ public class SafeArea : MonoBehaviour
         }
 
         isFueling = false;
+        source.Stop();
 
         if (player.fuel > player.maxFuel)
         {
