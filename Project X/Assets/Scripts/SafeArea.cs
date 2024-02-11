@@ -13,9 +13,10 @@ public class SafeArea : MonoBehaviour
     private AudioSource source;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         source = GetComponent<AudioSource>();
+        source.Stop();
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class SafeArea : MonoBehaviour
     {
         inRange = Physics2D.OverlapCircle(transform.position, checkRange, playerMask);
 
-        if (inRange && !isFueling)
+        if (inRange && !isFueling && player.fuel < player.maxFuel && !PauseMenu.IsGamePaused)
         {
             StartCoroutine(Fueling());
         }
@@ -39,9 +40,8 @@ public class SafeArea : MonoBehaviour
     {
         isFueling = true;
         source.Play();
-        float leftToFuel = player.maxFuel - player.fuel;
 
-        for (int i = 0; i < leftToFuel; i++)
+        for (int i = 0; i < 100; i++)
         {
             if (!inRange)
             {
@@ -49,18 +49,16 @@ public class SafeArea : MonoBehaviour
                 source.Stop();
                 yield break;
             }
-            yield return new WaitForSeconds(0.00001f);
-            player.fuel += player.maxFuel * 0.1f;
+            yield return new WaitForSeconds(0.05f);
+            player.fuel += player.maxFuel * 0.01f;
+            if (player.fuel > player.maxFuel)
+            {
+                player.fuel = player.maxFuel;
+                break;
+            }
         }
 
         isFueling = false;
         source.Stop();
-
-
-        if (player.fuel > player.maxFuel)
-        {
-            player.fuel = player.maxFuel;
-        }
-        
     }
 }

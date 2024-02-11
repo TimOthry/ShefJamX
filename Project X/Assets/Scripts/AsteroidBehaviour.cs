@@ -46,7 +46,7 @@ public class AsteroidBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Mathf.Sqrt(Mathf.Pow(Mathf.Abs(transform.position.x), 2) + Mathf.Pow(Mathf.Abs(transform.position.y), 2)) < 19f)
+        if (Mathf.Sqrt(Mathf.Pow(Mathf.Abs(transform.position.x), 2) + Mathf.Pow(Mathf.Abs(transform.position.y), 2)) < 16.5f)
         {
             Die();
         }
