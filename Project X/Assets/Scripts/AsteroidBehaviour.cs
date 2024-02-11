@@ -55,12 +55,10 @@ public class AsteroidBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
+        source.Play();
         if (health <= 0)
         {
             Die();
-        } else {
-            source.Play();
         }
     }
  
