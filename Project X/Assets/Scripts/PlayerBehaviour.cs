@@ -18,7 +18,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject destructionEffect;
     [SerializeField] private AudioClip explosionSound;
-    
+
+    [SerializeField] private int credits;
 
     public float distanceTravelled;
     private Vector2 lastPos;
