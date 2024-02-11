@@ -10,7 +10,7 @@ public class Collector : MonoBehaviour
         Debug.Log("Something happened");
         if (collectible != null)
         {
-            collectible.Collect();
+            Destroy(gameObject);
         }
     }
 }
