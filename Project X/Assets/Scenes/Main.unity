@@ -3362,6 +3362,7 @@ MonoBehaviour:
   shop: {fileID: 1027948384}
   HUD: {fileID: 2082450849}
   asteriodBreaker: 0
+  itemClip: {fileID: 8300000, guid: fbf2618bc08d4b9779c8070a1686aaf7, type: 3}
 --- !u!212 &1465308548
 SpriteRenderer:
   m_ObjectHideFlags: 0

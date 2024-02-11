@@ -31,6 +31,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject HUD;
 
     public bool asteriodBreaker = false;
+    [SerializeField] AudioClip itemClip;
 
     // Start is called before the first frame update
     void Start()
@@ -102,7 +103,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (hitInfo.GetComponent<Minerals>() is { } minerals)
         {
-            
+            AudioSource.PlayClipAtPoint(itemClip, transform.position, 5f);
         }
         else if (hitInfo.GetComponent<AsteroidBehaviour>() is {} asteroid)
         {
