@@ -18,8 +18,8 @@ public class AsteroidBehaviour : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player");
-        float y = gameObject.transform.position.y - player.transform.position.y;
-        float x = gameObject.transform.position.x - player.transform.position.x;
+        float y = transform.position.y - player.transform.position.y;
+        float x = transform.position.x - player.transform.position.x;
         Angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg + 90;
         Angle += Random.Range(-30, 30);
     }
@@ -28,14 +28,18 @@ public class AsteroidBehaviour : MonoBehaviour
     {
         Vector2 movement = Quaternion.Euler(0, 0, Angle) * Vector2.up;
         transform.position += (Vector3)(movement * (Time.deltaTime * speed));
-
-
-        Vector2 distanceVector = gameObject.transform.position - player.transform.position;
-        float distance = Mathf.Pow(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2), 0.5f);
-
+        
+        Vector2 distanceVector = transform.position - player.transform.position;
+        float distance = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(distanceVector.x), 2) + Mathf.Pow(Mathf.Abs(distanceVector.y), 2));
+        
         if (distance > maxDistance)
         {
             Destroy(gameObject);
+        }
+
+        if (Mathf.Sqrt(Mathf.Pow(Mathf.Abs(transform.position.x), 2) + Mathf.Pow(Mathf.Abs(transform.position.y), 2)) < 19f)
+        {
+            Die();
         }
     }
 
