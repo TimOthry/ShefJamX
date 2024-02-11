@@ -14,6 +14,11 @@ public class AsteroidBehaviour : MonoBehaviour
     [SerializeField] private int maxDistance;
     private Vector3 vectorVelocity;
     [SerializeField] private AudioClip explosionSound;
+    private AudioSource source;
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -50,6 +55,8 @@ public class AsteroidBehaviour : MonoBehaviour
         if (health <= 0)
         {
             Die();
+        } else {
+            source.Play();
         }
     }
  
