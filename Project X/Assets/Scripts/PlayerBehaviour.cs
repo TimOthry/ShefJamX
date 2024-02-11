@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -128,6 +130,13 @@ public class PlayerBehaviour : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(explosionSound, transform.position, 2f);
         Instantiate(destructionEffect, transform.position, Quaternion.identity);
+        GetComponent<SpriteRenderer>().enabled = false;
+        StartCoroutine(Death());
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1f);
         PauseMenu.Instance.GameOver();
     }
 

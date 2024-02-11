@@ -42,13 +42,10 @@ public class MusicPlayer : MonoBehaviour
         {
             return 0f;
         } 
-        else if (displacement > threshhold + phase)
+        if (displacement > threshhold + phase)
         {
             return vol;
         }
-        else// if (displacement < threshhold + phase)
-        {
-            return math.min(vol*(displacement - threshhold) / phase, vol);
-        }
+        return math.min(vol * (displacement - threshhold) / phase, vol);
     }
 }
