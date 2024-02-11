@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public bool asteriodBreaker = false;
     [SerializeField] AudioClip itemClip;
+    [SerializeField] private float thrustVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +73,7 @@ public class PlayerBehaviour : MonoBehaviour
             Mathf.Clamp(mousePos.y - transform.position.y, -9f, 9f)) / 9f;
 
         
-        source.volume = moveStep.magnitude;
+        source.volume = moveStep.magnitude * thrustVolume;
 
     }
 
