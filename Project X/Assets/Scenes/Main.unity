@@ -4844,6 +4844,11 @@ MonoBehaviour:
   hatDistance: 1000
   arpDistance: 200
   bassDistance: 50
+  kickVolume: 1
+  snareVolume: 0.5
+  hatVolume: 0.5
+  arpVolume: 0.1
+  bassVolume: 0.1
 --- !u!82 &1575778056
 AudioSource:
   m_ObjectHideFlags: 0
