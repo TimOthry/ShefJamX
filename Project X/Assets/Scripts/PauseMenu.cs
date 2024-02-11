@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool IsGamePaused = true;
 
     [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject GameOverUI;
+    public static PauseMenu Instance;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         Time.timeScale = 0f;
@@ -24,6 +31,18 @@ public class PauseMenu : MonoBehaviour
         {
             Pause();
         }
+    }
+
+    public void GameOver()
+    {
+        GameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        IsGamePaused = true;
+    }
+
+    public void TryAgain()
+    {
+        SceneManager.LoadScene("Main");
     }
 
     public void Resume()

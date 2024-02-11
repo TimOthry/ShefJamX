@@ -103,7 +103,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (hitInfo.GetComponent<Minerals>() is { } minerals)
         {
-            AudioSource.PlayClipAtPoint(itemClip, transform.position, 5f);
+            AudioSource.PlayClipAtPoint(itemClip, transform.position, 50f);
             int money = minerals.Collect();
             credits += money;
         }
@@ -128,7 +128,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(explosionSound, transform.position, 2f);
         Instantiate(destructionEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        PauseMenu.Instance.GameOver();
     }
 
     private Vector3 GetMousePos()
