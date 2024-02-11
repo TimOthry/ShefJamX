@@ -32,7 +32,7 @@ public class Spawner_Controller : MonoBehaviour
 
         if (spawnRate > 0.1f)
         {
-            spawnRate -= Mathf.Floor(distance / 30) * 0.2f;
+            spawnRate -= Mathf.Floor(distance / 100) * 0.2f;
         }
         else
         {

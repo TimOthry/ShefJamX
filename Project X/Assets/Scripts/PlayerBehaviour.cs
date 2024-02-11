@@ -16,6 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float distanceTravelled;
     private Vector2 lastPos;
 
+    public SafeArea safeArea;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,11 @@ public class PlayerBehaviour : MonoBehaviour
         distanceTravelled = Vector2.Distance(transform.position, lastPos);
         lastPos = transform.position;
 
-        fuel -= fuelDecay + (distanceTravelled * scaleMultFuel);
+        if (!safeArea.inRange)
+        {
+            fuel -= fuelDecay + (distanceTravelled * scaleMultFuel);
+        }
+        
 
         if (fuel <= 0)
         {
