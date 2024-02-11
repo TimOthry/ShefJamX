@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -74,6 +75,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         
         source.volume = moveStep.magnitude * thrustVolume;
+        source.panStereo = -moveStep.x/(maxMoveSpeed*5f);
 
     }
 
