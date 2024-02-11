@@ -31,8 +31,8 @@ public class MusicPlayer : MonoBehaviour
     {
         snare.volume = CalculateVolume(snareDistance, 1f);
         hat.volume = CalculateVolume(hatDistance, 1f);
-        arp.volume = CalculateVolume(arpDistance, 0.5f);
-        bass.volume = CalculateVolume(bassDistance, 0.5f);
+        arp.volume = CalculateVolume(arpDistance, 0.2f);
+        bass.volume = CalculateVolume(bassDistance, 0.2f);
     }
 
     private float CalculateVolume(float threshhold, float vol)
