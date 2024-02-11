@@ -76,7 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
         else if (moveSpeed < maxMoveSpeed) moveSpeed += Time.fixedDeltaTime / accelerationTime;
         moveStep = mouseDifferenceNormalised * (moveSpeed * boost);
         rigidBody.MovePosition(transform.position + (Vector3)moveStep);
-        Debug.Log("Move speed: " + moveSpeed.ToString("F3") + " mouse dif: " + mouseDifferenceNormalised.ToString("F3"));
+        Debug.Log("Move step: " + moveStep.magnitude.ToString("F3") + " mouse dif: " + mouseDifferenceNormalised.ToString("F3"));
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
