@@ -29,13 +29,13 @@ public class MusicPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        snare.volume = CalculateVolume(snareDistance);
-        hat.volume = CalculateVolume(hatDistance);
-        arp.volume = CalculateVolume(arpDistance);
-        bass.volume = CalculateVolume(bassDistance);
+        snare.volume = CalculateVolume(snareDistance, 1f);
+        hat.volume = CalculateVolume(hatDistance, 1f);
+        arp.volume = CalculateVolume(arpDistance, 0.5f);
+        bass.volume = CalculateVolume(bassDistance, 0.5f);
     }
 
-    private float CalculateVolume(float threshhold)
+    private float CalculateVolume(float threshhold, float vol)
     {
         float displacement = cameraTransform.position.magnitude;
         if (displacement < threshhold)
@@ -44,11 +44,11 @@ public class MusicPlayer : MonoBehaviour
         } 
         else if (displacement > threshhold + phase)
         {
-            return 1f;
+            return vol;
         }
         else// if (displacement < threshhold + phase)
         {
-            return math.min((displacement - threshhold) / phase, 1f);
+            return math.min(vol*(displacement - threshhold) / phase, vol);
         }
     }
 }
