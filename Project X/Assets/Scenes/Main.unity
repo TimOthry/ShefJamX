@@ -4039,7 +4039,7 @@ MonoBehaviour:
   HUD: {fileID: 2082450849}
   asteriodBreaker: 0
   itemClip: {fileID: 8300000, guid: fbf2618bc08d4b9779c8070a1686aaf7, type: 3}
-  thrustVolume: 0.25
+  thrustVolume: 0.15
 --- !u!212 &1465308548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4847,8 +4847,8 @@ MonoBehaviour:
   kickVolume: 1
   snareVolume: 0.5
   hatVolume: 0.5
-  arpVolume: 0.1
-  bassVolume: 0.1
+  arpVolume: 0.2
+  bassVolume: 0.2
 --- !u!82 &1575778056
 AudioSource:
   m_ObjectHideFlags: 0
