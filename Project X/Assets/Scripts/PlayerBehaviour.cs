@@ -102,7 +102,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (hitInfo.GetComponent<Minerals>() is { } minerals)
         {
-            
+            int money = minerals.Collect();
+            credits += money;
         }
         else if (hitInfo.GetComponent<AsteroidBehaviour>() is {} asteroid)
         {
