@@ -27,6 +27,10 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector2 lastPos;
 
     public SafeArea safeArea;
+    public GameObject shop;
+    public GameObject HUD;
+
+    public bool asteriodBreaker = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,13 @@ public class PlayerBehaviour : MonoBehaviour
             boost = 1f;
         }
 
+        if (safeArea.inRange && Input.GetKey(KeyCode.S))
+        {
+            HUD.SetActive(false);
+            shop.SetActive(true);
+            Time.timeScale = 0;
+        }
+
         Vector3 mousePos = GetMousePos();
         Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         transform.up = direction;
@@ -58,6 +69,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         
         source.volume = moveStep.magnitude;
+
     }
 
     private void FixedUpdate()
