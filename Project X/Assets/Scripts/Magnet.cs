@@ -7,11 +7,11 @@ public class Magnet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // see if we collide with the mineral
-        if (collision.gameObject.TryGetComponent<Minerals>(out Minerals mineral))
-        {
-            // tell the mineral to move towards player
-            Debug.Log("I see mineral");
-            mineral.SetTarget(transform.parent.position);
-        }
+        //if (collision.gameObject.TryGetComponent<Minerals>(out Minerals mineral))
+        //{
+        //    // tell the mineral to move towards player
+        //    Debug.Log("I see mineral");
+        //    mineral.SetTarget(transform.parent.position);
+        //}
     }
 }
