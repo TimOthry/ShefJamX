@@ -18,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject destructionEffect;
     [SerializeField] private AudioClip explosionSound;
+    private AudioSource source;
     
 
     public float distanceTravelled;
@@ -32,6 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
         maxFuel = 500; // This is to be changed when fuel is upgraded
         rigidBody = GetComponent<Rigidbody2D>();
         lastPos = transform.position;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,9 @@ public class PlayerBehaviour : MonoBehaviour
         transform.up = direction;
         mouseDifferenceNormalised = new Vector2(Mathf.Clamp(mousePos.x - transform.position.x, -9f, 9f),
             Mathf.Clamp(mousePos.y - transform.position.y, -9f, 9f)) / 9f;
+
+        
+        source.volume = moveStep.magnitude;
     }
 
     private void FixedUpdate()
