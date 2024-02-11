@@ -104,6 +104,17 @@ public class PlayerBehaviour : MonoBehaviour
         {
             
         }
+        else if (hitInfo.GetComponent<AsteroidBehaviour>() is {} asteroid)
+        {
+            if (asteriodBreaker)
+            {
+                asteroid.Die();
+            }
+            else
+            {
+                Die();
+            }
+        }
         else
         {
             Die();

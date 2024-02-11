@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float fireRate = 0.005f;
     private float nextFire = 0.0f;
+    public int bulletDamage;
 
     // Update is called once per frame
     void Update()
@@ -22,6 +23,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot() {
         // Shooting object
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Bullet>().damage = bulletDamage;
     }
 }

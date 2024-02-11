@@ -2831,6 +2831,7 @@ MonoBehaviour:
   firePoint: {fileID: 1021880163}
   bulletPrefab: {fileID: 411806389449981207, guid: dc5c84a2b71b74cdf80311add2ebc97d, type: 3}
   fireRate: 0.2
+  bulletDamage: 40
 --- !u!50 &1465308551
 Rigidbody2D:
   serializedVersion: 4
@@ -3996,7 +3997,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1465308547}
-  bullet: {fileID: 3949784106588402925, guid: dc5c84a2b71b74cdf80311add2ebc97d, type: 3}
   levelText: {fileID: 1389340939}
   priceText: {fileID: 2009249200}
 --- !u!4 &1903278086

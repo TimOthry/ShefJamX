@@ -65,7 +65,7 @@ public class AsteroidBehaviour : MonoBehaviour
     }
  
 
-    void Die()
+    public void Die()
     {
         AudioSource.PlayClipAtPoint(explosionSound, transform.position, 2f);
         GetComponent<LootBag>().InstantiateLoot(transform.position);
