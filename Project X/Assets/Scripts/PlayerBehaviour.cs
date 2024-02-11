@@ -19,7 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private GameObject destructionEffect;
     [SerializeField] private AudioClip explosionSound;
 
-    [SerializeField] private int credits;
+    public int credits;
     private AudioSource source;
     
 
