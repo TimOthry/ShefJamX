@@ -18,12 +18,15 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         AsteroidBehaviour asteroid = hitInfo.GetComponent<AsteroidBehaviour>();
-        if (asteroid != null)
+        if (hitInfo.GetComponent<Magnet>() == null)
         {
-            asteroid.TakeDamage(damage);
-        } 
+            if (asteroid != null)
+            {
+                asteroid.TakeDamage(damage);
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
         Debug.Log(hitInfo.name);
     }
 
