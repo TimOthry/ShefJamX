@@ -14,7 +14,7 @@ public class Minerals : MonoBehaviour, ICollectible
 
     private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void Collect()
@@ -28,6 +28,7 @@ public class Minerals : MonoBehaviour, ICollectible
     {
         if (hasTarget)
         {
+            Debug.Log("Save me");
             Vector2 targetDirection = (targetPos - transform.position).normalized;
             rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * moveSpeed;
         }
